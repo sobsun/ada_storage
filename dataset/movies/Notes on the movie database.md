@@ -37,21 +37,23 @@ and try to decipher the genre of a movie by analysing the plot summary
 
 *How has a specific genre evoluted over the years ?*
 The dataset contains movies that were filmed over a more-than-60-years time period. Ranging from the 1950s until the 2010s, the dataset usually presents at least 200 movies per year. Most of them present some kind of genre categorisation. 
-By leveraging the plot summaries available in the dataset, we could try to analyze how a specific genre (for example horror, or science-fiction) has evolved over the years. How many characters are displayed ? Are the personnas presented similar to each other or is there an evolution trend ? WHat kind of events happen in the plot ? 
-This analysis could also try to extract a movie genre from a textual plot summary and fill in the gaps in the dataset. 
+By leveraging the plot summaries available in the dataset, we could try to analyze how a specific genre (for example horror or science-fiction) has evolved over the years. How many characters are displayed ? Are the personnas presented similar to each other or is there an evolution trend ? What kind of events happen in the plot ? We could try to relate the evolution with technical improvements in the filming industry (cameras, digitalisation, etc) and see whether technological progress influences plots in any manner. 
+In a reverse way, this analysis could also try to extract a movie genre from a textual plot summary and fill in the gaps in the dataset. 
 
 add something about technical evolution ? 
 coupler ave
 
 _A geographical analysis of Culture_
-This subject tackles the question of cultural diffusion and availability. We are constantly in our daily confronted to cultural ideas and concepts. In our globalized world, who creates the cultural content on which a population is confronted ? Is it uniform over the globe or are there disparities ? Using the movie dataset, we can try to dive into a snippet of this broad question. 
-Who produces the films ? On what geographical area are the movies available to the public ? Is there a monopoly of a few country (US film) as one would assume on a first-basis or is the movie production more geographically distributed ? 
+This subject tackles the question of cultural diffusion and availability. We are constantly in our daily confronted to cultural ideas and concepts. In our globalized world, who creates the cultural content on which a population is confronted ? Is it uniform over the globe or are there disparities ? Using the movie dataset, we can try to dive into a snippet of this broad question by looking at culture revolving around movies.
+Who produces the films ? On what geographical area are the movies available to the public ? Is there a monopoly of a few country (US films for example) or is the movie production more geographically distributed ? 
 
 bias on the language since this db was collected only on English wikipedia pages
 
 _the historical accuracy in movies_
 _how is history represented throughout the years_
 la mémoire de l'histoire 
+
+_climate change_
 
 
 
