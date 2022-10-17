@@ -52,6 +52,19 @@ db.sample(n = 10,replace = True)                        ==> with replacement (2*
 .sample(n = 10, replace = False)
 df.sample(n = 10, replace = False, weights = df['col']) ==> unbalanced sampling
 
+# Bootstrap Function
+def bootstrap(data, n): # n number of bootstrap samples 
+    means = ''
+    sample_size = len(data)
+    for i in range(n):
+        x = data.sample(n=sample_size, replacement = 'True')
+        means[i] = x.mean()
+    means.sort_values(ascending = True)
+    conf_int = ''
+    conf_int[0] = means[int(n*0.025)+1]
+    conf_int[1] = means[int(n*0.975)]
+    return conf_int
+
 # Rearrange
 .drop("column", axis=1)
 .drop("index", axis=0)
@@ -157,6 +170,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.lmplot(data = df, x="clo1", y="col2")
 sns.barplot(x="col1", y="col2", data=df)               ==> includes errors bars, which ones? 
+plt.xlabel('label')
+plt.ylabel()
 
 .scatter(x='col1', y='col2')    ==> doesn't work
 .plot(x="col1", y="col2", kind="scatter")
