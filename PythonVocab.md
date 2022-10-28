@@ -97,15 +97,23 @@ def bootstrap_CI(data, nbr_draws):
 .drop("index", axis=0)
 .drop("index")
 .drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
+.reset_index(inplace=True)          ==> puts the index back into columns and create a new index 0,1,2... 
+                                    ==> inplace = same variable, not creating a new one)
 
 .sort_values("column", ascending=False)
 db[db.col1=='value'][what_to_show]          ==> select one the rows where col1 == value
 db[[var.startswith('') for var in db.col]]
 db[db.col1=='value']['col2']                ==> returns a Series
 db[db.col1=='value'][['col2','col3']]       ==> attention [[]], returns a DataFrame
-db.loc[df['col1'] == 'value']['col2']
+db.loc[(df['col1'] == 'value')& ()]['col2']
 
 db.query(expr)                  ==> 
+
+# Change stuff dynamically according to the name of the column
+for col in df.columns:
+    if 'string_stuck' in col:
+        df[col[:-1]] = task_4_df[col[:-1] + 'some_string'] + task_4_df[col]
+    ==> col[:-1] is the col string truncated of the last character (col[:-3] => truncated of 3 characters, etc)
 
 # Pivot
 db.pivot_table(values='', index='', columns='', aggfunc='count',fill_value='NaN')   ==> will count the number of occurences in each nod
@@ -162,6 +170,10 @@ statsmodels.stats.proportion.binom_test(count {==># of successes}, nobs (==># of
         ==> p_value < 0.05 -> we can reject H0 -> probalility of success isn't prop
         ==> alternative [‘two-sided’, ‘smaller’, ‘larger’] (one-tailed test where we test is p < prop {smaller} or p> prop {larger} )
 
+# Multiple testing
+https://multithreaded.stitchfix.com/blog/2015/10/15/multiple-hypothesis-testing/ 
+
+
 # String
 .str.lower()    #case sensitivity
 
@@ -178,6 +190,7 @@ pd.merge(db1, db2, left_on = 'column1', right_on = 'column2')
 # Boolean
 x == y              ==> will return true of false
 x==a | x==b         ==> OR
+&
 
 ## Print
 var1 = 1
@@ -274,3 +287,15 @@ https://seaborn.pydata.org/tutorial.html
 dict = {}
 dict['label'] = content
 for idx,key in enumerate(dict)
+
+
+# Linear regression
+import statsmodels.formula.api as smf
+mod = smf.ols(formula='time ~ C(a) + C(b)', data=df) 
+        ==> ordinary least squares linear regression 
+        ==> (C(a) is a categorical data)
+        ==> terms are columns in dataframe
+        ==> a*b = a + b + a:b (interaction term)
+np.random.seed(2)       ==> for consistency
+res = mod.fit()         ==> tries to fit the model 
+res.summary()
