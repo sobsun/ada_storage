@@ -108,6 +108,8 @@ db[db.col1=='value'][['col2','col3']]       ==> attention [[]], returns a DataFr
 db.loc[(df['col1'] == 'value')& ()]['col2']
 
 db.query(expr)                  ==> 
+db['col'].loc['row']        ==> get one value 
+db.iloc[5]
 
 # Change stuff dynamically according to the name of the column
 for col in df.columns:
@@ -132,6 +134,10 @@ gdb.agg(['mean'])
 gdb.agg(['mean','count']) 
 count => returns the numbers of non-null values, here in each group
 https://datascientyst.com/list-aggregation-functions-aggfunc-groupby-pandas/ 
+
+## zip thing
+sort them all by coefficients
+l1, l2, l3, l4 = zip(*sorted(zip(coefficients[1:], variables[1:], standard_errors[1:], p_values[1:])))
 
 
 # Stats
